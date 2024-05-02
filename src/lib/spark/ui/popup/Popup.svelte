@@ -15,6 +15,10 @@
 	export let onApply: (() => void) | undefined = undefined;
 	export let onClose: (() => void) | undefined = undefined;
 	export let onCancel: (() => void) | undefined = undefined;
+
+	function closePopup() {
+		open = false;
+	}
 </script>
 
 <div
@@ -36,8 +40,9 @@
 		{#if customHeader}
 			<slot name="header" />
 		{:else}
-			<button class="btn btn-ghost border-neutral-content border-2 w-12 h-12 p-0 float-right"
-				><IconX /></button
+			<button
+				class="btn btn-ghost border-neutral-content border-2 w-12 h-12 p-0 float-right"
+				on:click={closePopup}><IconX /></button
 			>
 
 			<h1>{title}</h1>
