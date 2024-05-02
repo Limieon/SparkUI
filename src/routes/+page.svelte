@@ -43,7 +43,12 @@
 		-->
 
 		<div class="absolute left-2 bottom-0 tooltip tooltip-right" data-tip="Settings...">
-			<button class="btn mb-2 h-[48px] w-[48px] p-2" on:click={() => {}}>
+			<button
+				class="btn mb-2 h-[48px] w-[48px] p-2"
+				on:click={() => {
+					settingsOpen = true;
+				}}
+			>
 				<IconSettings />
 			</button>
 		</div>
@@ -64,4 +69,6 @@
 	{:else if page === 'downloads'}
 		<Downloads />
 	{/if}
+
+	<Settings bind:open={settingsOpen} />
 </PageLayout>
