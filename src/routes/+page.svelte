@@ -23,7 +23,7 @@
 </script>
 
 <PageLayout>
-	<span slot="nav">
+	<div slot="nav" class="h-full">
 		{#each pages as p}
 			<div class="tooltip tooltip-right" data-tip={p.title}>
 				<button
@@ -41,14 +41,12 @@
 			<Separator class="mb-4 mt-2 w-[48px]" />
 		-->
 
-		<div class="tooltip tooltip-right" data-tip="Settings...">
+		<div class="absolute left-2 bottom-0 tooltip tooltip-right" data-tip="Settings...">
 			<button class="btn mb-2 h-[48px] w-[48px] p-2" on:click={() => {}}>
 				<IconSettings />
 			</button>
 		</div>
-
-		<ThemeSwitcher class="fixed bottom-4 left-2 h-[48px] w-[48px]" />
-	</span>
+	</div>
 
 	{#if page === 'txt2img'}
 		<Txt2Img />

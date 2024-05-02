@@ -24,7 +24,7 @@
 
 		<!-- Sidebar Menu -->
 
-		<div class="col-span-1 row-span-1 block">
+		<div class="col-span-1 row-span-1 block h-full">
 			<slot name="nav" />
 		</div>
 
