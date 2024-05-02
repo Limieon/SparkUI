@@ -13,7 +13,11 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
-			'$spark/*': './src/lib/spark/*'
+			'@/*': './src/lib/*',
+			'$src/*': './src/*',
+			'$lib/*': './src/lib/*',
+			'$spark/*': './src/lib/spark/*',
+			$pages: './src/pages/index.ts'
 		}
 	}
 };
