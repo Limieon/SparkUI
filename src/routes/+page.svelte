@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageLayout from '$spark/layouts/MainLayout.svelte';
+	import { _ } from 'svelte-i18n';
 
 	import {
 		Txt2Img,
@@ -25,7 +26,7 @@
 <PageLayout>
 	<div slot="nav" class="h-full">
 		{#each pages as p}
-			<div class="tooltip tooltip-right" data-tip={p.title}>
+			<div class="tooltip tooltip-right" data-tip={$_(p.title)}>
 				<button
 					class="btn mb-2 h-[48px] w-[48px] p-2 {page === p.page ? 'btn-primary' : ''}"
 					on:click={() => {
@@ -63,6 +64,4 @@
 	{:else if page === 'downloads'}
 		<Downloads />
 	{/if}
-
-	<Settings bind:open={settingsOpen} />
 </PageLayout>

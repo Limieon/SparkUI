@@ -1,4 +1,6 @@
 <script lang="ts">
+	import LanguageSelector from '$spark/ui/LanguageSelector.svelte';
+
 	let version = 'v1.0';
 </script>
 
@@ -19,6 +21,8 @@
 						- {version}
 					</h1>
 				</div>
+
+				<LanguageSelector class="absolute right-2 w-48 rounded-lg" />
 			</div>
 		</div>
 

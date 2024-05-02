@@ -25,7 +25,7 @@ type Page = {
 const pages: Page[] = [
     {
         page: 'txt2img',
-        title: 'Text to Image',
+        title: 'page.txt2img.title',
         icon: IconType
     },
     {

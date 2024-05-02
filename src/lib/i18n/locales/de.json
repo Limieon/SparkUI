@@ -1,5 +1,7 @@
 {
 	"page": {
-		"title": "SparkUI - Deutsch"
+		"txt2img": {
+			"title": "Bild aus Text"
+		}
 	}
 }
