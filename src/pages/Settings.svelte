@@ -4,7 +4,9 @@
 	export let open: boolean = false;
 
 	function onApply() {}
-	function onClose() {}
+	function onClose() {
+		open = false;
+	}
 	function onCancel() {}
 </script>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import LanguageSelector from '$spark/ui/LanguageSelector.svelte';
+	import ThemeSwitcher from '$spark/ui/ThemeSwitcher.svelte';
 
 	let version = 'v1.0';
 </script>
@@ -22,7 +23,10 @@
 					</h1>
 				</div>
 
-				<LanguageSelector class="absolute right-2 w-48 rounded-lg" />
+				<div class="float-right grid grid-flow-col gap-2">
+					<ThemeSwitcher class="w-48 rounded-lg" />
+					<LanguageSelector class="w-48 rounded-lg" />
+				</div>
 			</div>
 		</div>
 

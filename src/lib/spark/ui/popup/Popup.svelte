@@ -15,19 +15,13 @@
 	export let onApply: (() => void) | undefined = undefined;
 	export let onClose: (() => void) | undefined = undefined;
 	export let onCancel: (() => void) | undefined = undefined;
-
-	function closePopup() {
-		open = false;
-	}
 </script>
 
 <div
 	class="absolute bg-black top-0 bottom-0 left-0 right-0 z-40 transition-all {open
 		? 'bg-opacity-50 backdrop-filter backdrop-blur-lg pointer-events-auto '
 		: 'bg-opacity-0 pointer-events-none'}"
-	on:click={() => {
-		open = false;
-	}}
+	on:click={onClose}
 />
 
 <div
@@ -42,7 +36,7 @@
 		{:else}
 			<button
 				class="btn btn-ghost border-neutral-content border-2 w-12 h-12 p-0 float-right"
-				on:click={closePopup}><IconX /></button
+				on:click={onClose}><IconX /></button
 			>
 
 			<h1>{title}</h1>
@@ -62,13 +56,17 @@
 		{:else}
 			<div class="grid grid-flow-col gap-2">
 				{#if onClose != undefined}
-					<button class="btn btn-primary w-32">{close}</button>
+					<button class="btn btn-primary w-32" on:click={onClose}>{close}</button>
 				{/if}
 				{#if onCancel != undefined}
-					<button class="btn btn-ghost border-neutral-content border-2 w-32">{cancel}</button>
+					<button class="btn btn-ghost border-neutral-content border-2 w-32" on:click={onCancel}
+						>{cancel}</button
+					>
 				{/if}
 				{#if onApply != undefined}
-					<button class="btn btn-ghost border-neutral-content border-2 w-32">{apply}</button>
+					<button class="btn btn-ghost border-neutral-content border-2 w-32" on:click={onApply}
+						>{apply}</button
+					>
 				{/if}
 			</div>
 		{/if}
