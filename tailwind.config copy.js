@@ -1,9 +1,6 @@
-import { fontFamily } from 'tailwindcss/defaultTheme';
-
 /** @type {import('tailwindcss').Config} */
-const config = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
-	darkMode: 'class',
+export default {
+	content: ['./src/**/*.{html,js,svelte}'],
 	theme: {
 		extend: {}
 	},
@@ -22,11 +19,8 @@ const config = {
 					'base-300': '#09090b' // Zinc-950
 				}
 			},
-			'business',
-			'light'
+			'business'
 		]
 	},
 	plugins: [require('daisyui')]
 };
-
-export default config;

@@ -5,8 +5,22 @@
 	import IconSun from 'lucide-svelte/icons/sun';
 	import IconMoon from 'lucide-svelte/icons/moon';
 
+	let currentTheme = 0;
+
 	onMount(() => {
 		themeChange(false);
+
+		const rootElement = document.documentElement;
+		const theme = rootElement.getAttribute('data-theme');
+
+		for (let i = 0; i < themes.length; ++i) {
+			if (themes[i].theme == theme) {
+				currentTheme = i;
+				break;
+			}
+		}
+
+		console.log(theme);
 	});
 
 	type Theme = {
@@ -28,14 +42,13 @@
 		}
 	];
 
-	let value = 1;
-	let theme = themes[1];
+	let theme = themes[currentTheme];
 
 	function onChnage() {
-		value++;
-		if (value >= themes.length) value = 0;
+		currentTheme++;
+		if (currentTheme >= themes.length) currentTheme = 0;
 
-		theme = themes[value];
+		theme = themes[currentTheme];
 		console.log(theme);
 	}
 
@@ -43,7 +56,11 @@
 	export { classNames as class };
 </script>
 
-<button class="btn p-0 {classNames} justify-normal pl-2" on:click={onChnage}>
-	<svelte:component this={themes[value].icon} />
-	<p class="text-lg ml-1">{themes[value].name}</p>
+<button
+	data-toggle-theme={themes[currentTheme].theme}
+	class="btn p-0 {classNames} justify-normal pl-2"
+	on:click={onChnage}
+>
+	<svelte:component this={themes[currentTheme].icon} />
+	<p class="text-lg ml-1">{themes[currentTheme].name}</p>
 </button>
