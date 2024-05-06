@@ -26,8 +26,8 @@
 
 <div
 	class="fixed rounded-xl bg-base-300 z-50 top-48 bottom-48 left-96 right-96 flex flex-col backdrop:blur-xl {open
-		? 'opacity-100 translate-y-0'
-		: 'opacity-0 -translate-y-36'} transition-all"
+		? 'opacity-100 translate-y-0 pointer-events-auto'
+		: 'opacity-0 -translate-y-36 pointer-events-none'} transition-all"
 >
 	<!-- Header -->
 	<div class="bg-primary rounded-t-xl left-0 right-0 p-2 h-fit">
