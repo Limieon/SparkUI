@@ -25,16 +25,16 @@
 	</div>
 
 	<button class="btn-block btn-ghost justify-start grid grid-cols-[max-content_auto] items-center"
-		><IconUser class="ml-10 mr-8 h-10" /> View Profile</button
+		><IconUser class="ml-8 mr-10 h-10" /> View Profile</button
 	>
 	<button class="btn-block btn-ghost justify-start grid grid-cols-[max-content_auto] items-center"
-		><IconEdit class="ml-10 mr-8 h-10" />Edit Profile</button
+		><IconEdit class="ml-8 mr-10 h-10" />Edit Profile</button
 	>
 	<button class="btn-block btn-ghost justify-start grid grid-cols-[max-content_auto] items-center"
-		><IconManage class="ml-10 mr-8 h-10" />Manage Account</button
+		><IconManage class="ml-8 mr-10 h-10" />Manage Account</button
 	>
 	<button
 		class="btn-block btn-ghost justify-start grid grid-cols-[max-content_auto] items-center text-red-500 mt-4"
-		><IconLogout class="ml-10 mr-8 h-10" />Sign Out</button
+		><IconLogout class="ml-8 mr-10 h-10" />Sign Out</button
 	>
 </div>
